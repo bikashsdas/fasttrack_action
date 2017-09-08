@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED8B39891F62D8E400351699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B39881F62D8E400351699 /* AppDelegate.swift */; };
+		ED8B398E1F62D8E400351699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8B398C1F62D8E400351699 /* Main.storyboard */; };
+		ED8B39911F62D8E400351699 /* FastTrackSales.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED8B398F1F62D8E400351699 /* FastTrackSales.xcdatamodeld */; };
+		ED8B39931F62D8E400351699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39921F62D8E400351699 /* Assets.xcassets */; };
+		ED8B39961F62D8E400351699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39941F62D8E400351699 /* LaunchScreen.storyboard */; };
+		ED8B39A11F62D8E400351699 /* FastTrackSalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B39A01F62D8E400351699 /* FastTrackSalesTests.swift */; };
+		ED8B39DB1F62D9D200351699 /* arrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39AE1F62D9D200351699 /* arrowDown.png */; };
+		ED8B39DC1F62D9D200351699 /* calendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39AF1F62D9D200351699 /* calendarIcon.png */; };
+		ED8B39DD1F62D9D200351699 /* cartActive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B01F62D9D200351699 /* cartActive.png */; };
+		ED8B39DE1F62D9D200351699 /* cartInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B11F62D9D200351699 /* cartInactive.png */; };
+		ED8B39DF1F62D9D200351699 /* delivered.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B21F62D9D200351699 /* delivered.png */; };
+		ED8B39E01F62D9D200351699 /* deliveredIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B31F62D9D200351699 /* deliveredIcon.png */; };
+		ED8B39E11F62D9D200351699 /* editIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B41F62D9D200351699 /* editIcon.png */; };
+		ED8B39E21F62D9D200351699 /* headerBar.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B51F62D9D200351699 /* headerBar.png */; };
+		ED8B39E31F62D9D200351699 /* history_LMBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B61F62D9D200351699 /* history_LMBlue.png */; };
+		ED8B39E41F62D9D200351699 /* history_LMRed.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B71F62D9D200351699 /* history_LMRed.png */; };
+		ED8B39E51F62D9D200351699 /* history_MarlboroFuse.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B81F62D9D200351699 /* history_MarlboroFuse.png */; };
+		ED8B39E61F62D9D200351699 /* L&M_RegularCut_Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39B91F62D9D200351699 /* L&M_RegularCut_Blue.png */; };
+		ED8B39E71F62D9D200351699 /* L&M_RegularCut_Red.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39BA1F62D9D200351699 /* L&M_RegularCut_Red.png */; };
+		ED8B39E81F62D9D200351699 /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39BB1F62D9D200351699 /* loginBackground.png */; };
+		ED8B39E91F62D9D200351699 /* loginBox.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39BC1F62D9D200351699 /* loginBox.png */; };
+		ED8B39EA1F62D9D200351699 /* logoFastTrack_small.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39BD1F62D9D200351699 /* logoFastTrack_small.png */; };
+		ED8B39EB1F62D9D200351699 /* logoFastTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39BE1F62D9D200351699 /* logoFastTrack.png */; };
+		ED8B39EC1F62D9D200351699 /* MarlboroBright.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39BF1F62D9D200351699 /* MarlboroBright.png */; };
+		ED8B39ED1F62D9D200351699 /* MarlboroFine.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C01F62D9D200351699 /* MarlboroFine.png */; };
+		ED8B39EE1F62D9D200351699 /* MarlboroFuse.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C11F62D9D200351699 /* MarlboroFuse.png */; };
+		ED8B39EF1F62D9D200351699 /* navBar.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C21F62D9D200351699 /* navBar.png */; };
+		ED8B39F01F62D9D200351699 /* numbercircleActive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C31F62D9D200351699 /* numbercircleActive.png */; };
+		ED8B39F11F62D9D200351699 /* numbercircleInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C41F62D9D200351699 /* numbercircleInactive.png */; };
+		ED8B39F21F62D9D200351699 /* ordered_approved.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C51F62D9D200351699 /* ordered_approved.png */; };
+		ED8B39F31F62D9D200351699 /* orderhistoryActive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C61F62D9D200351699 /* orderhistoryActive.png */; };
+		ED8B39F41F62D9D200351699 /* orderhistoryInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C71F62D9D200351699 /* orderhistoryInactive.png */; };
+		ED8B39F51F62D9D200351699 /* packed.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C81F62D9D200351699 /* packed.png */; };
+		ED8B39F61F62D9D200351699 /* passwordIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39C91F62D9D200351699 /* passwordIcon.png */; };
+		ED8B39F71F62D9D200351699 /* promo_MarlboroClove.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39CA1F62D9D200351699 /* promo_MarlboroClove.png */; };
+		ED8B39F81F62D9D200351699 /* promo_MarlboroIce.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39CB1F62D9D200351699 /* promo_MarlboroIce.png */; };
+		ED8B39F91F62D9D200351699 /* promo_MarlboroMenthol.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39CC1F62D9D200351699 /* promo_MarlboroMenthol.png */; };
+		ED8B39FA1F62D9D200351699 /* promo_NextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39CD1F62D9D200351699 /* promo_NextButton.png */; };
+		ED8B39FB1F62D9D200351699 /* promoActive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39CE1F62D9D200351699 /* promoActive.png */; };
+		ED8B39FC1F62D9D200351699 /* promoInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39CF1F62D9D200351699 /* promoInactive.png */; };
+		ED8B39FD1F62D9D200351699 /* shipped.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D01F62D9D200351699 /* shipped.png */; };
+		ED8B39FE1F62D9D200351699 /* switchButton.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D11F62D9D200351699 /* switchButton.png */; };
+		ED8B39FF1F62D9D200351699 /* switchCross.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D21F62D9D200351699 /* switchCross.png */; };
+		ED8B3A001F62D9D200351699 /* switchTick.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D31F62D9D200351699 /* switchTick.png */; };
+		ED8B3A011F62D9D200351699 /* trackLine.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D41F62D9D200351699 /* trackLine.png */; };
+		ED8B3A021F62D9D200351699 /* trackNode.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D51F62D9D200351699 /* trackNode.png */; };
+		ED8B3A031F62D9D200351699 /* trackorderActive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D61F62D9D200351699 /* trackorderActive.png */; };
+		ED8B3A041F62D9D200351699 /* trackorderInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D71F62D9D200351699 /* trackorderInactive.png */; };
+		ED8B3A051F62D9D200351699 /* userIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D81F62D9D200351699 /* userIcon.png */; };
+		ED8B3A061F62D9D200351699 /* userPhoto_small.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39D91F62D9D200351699 /* userPhoto_small.png */; };
+		ED8B3A071F62D9D200351699 /* userPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B39DA1F62D9D200351699 /* userPhoto.png */; };
+		ED8B3A091F62D9F600351699 /* backArrowWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8B3A081F62D9F600351699 /* backArrowWhite.png */; };
+		ED8B3A111F62DAE600351699 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A0A1F62DAE600351699 /* CartViewController.swift */; };
+		ED8B3A121F62DAE600351699 /* CustomerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A0B1F62DAE600351699 /* CustomerProfileViewController.swift */; };
+		ED8B3A131F62DAE600351699 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A0C1F62DAE600351699 /* HomeViewController.swift */; };
+		ED8B3A141F62DAE600351699 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A0D1F62DAE600351699 /* LoginViewController.swift */; };
+		ED8B3A151F62DAE600351699 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A0E1F62DAE600351699 /* OrderHistoryViewController.swift */; };
+		ED8B3A161F62DAE600351699 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A0F1F62DAE600351699 /* PromotionsViewController.swift */; };
+		ED8B3A171F62DAE600351699 /* TrackOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A101F62DAE600351699 /* TrackOrdersViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED8B399D1F62D8E400351699 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED8B397D1F62D8E400351699 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED8B39841F62D8E400351699;
+			remoteInfo = FastTrackSales;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED8B39851F62D8E400351699 /* FastTrackSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastTrackSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8B39881F62D8E400351699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED8B398D1F62D8E400351699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED8B39901F62D8E400351699 /* FastTrackSales.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FastTrackSales.xcdatamodel; sourceTree = "<group>"; };
+		ED8B39921F62D8E400351699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED8B39951F62D8E400351699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED8B39971F62D8E400351699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED8B399C1F62D8E400351699 /* FastTrackSalesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastTrackSalesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8B39A01F62D8E400351699 /* FastTrackSalesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastTrackSalesTests.swift; sourceTree = "<group>"; };
+		ED8B39A21F62D8E400351699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED8B39AE1F62D9D200351699 /* arrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowDown.png; sourceTree = "<group>"; };
+		ED8B39AF1F62D9D200351699 /* calendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendarIcon.png; sourceTree = "<group>"; };
+		ED8B39B01F62D9D200351699 /* cartActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cartActive.png; sourceTree = "<group>"; };
+		ED8B39B11F62D9D200351699 /* cartInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cartInactive.png; sourceTree = "<group>"; };
+		ED8B39B21F62D9D200351699 /* delivered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delivered.png; sourceTree = "<group>"; };
+		ED8B39B31F62D9D200351699 /* deliveredIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deliveredIcon.png; sourceTree = "<group>"; };
+		ED8B39B41F62D9D200351699 /* editIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editIcon.png; sourceTree = "<group>"; };
+		ED8B39B51F62D9D200351699 /* headerBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerBar.png; sourceTree = "<group>"; };
+		ED8B39B61F62D9D200351699 /* history_LMBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history_LMBlue.png; sourceTree = "<group>"; };
+		ED8B39B71F62D9D200351699 /* history_LMRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history_LMRed.png; sourceTree = "<group>"; };
+		ED8B39B81F62D9D200351699 /* history_MarlboroFuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history_MarlboroFuse.png; sourceTree = "<group>"; };
+		ED8B39B91F62D9D200351699 /* L&M_RegularCut_Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "L&M_RegularCut_Blue.png"; sourceTree = "<group>"; };
+		ED8B39BA1F62D9D200351699 /* L&M_RegularCut_Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "L&M_RegularCut_Red.png"; sourceTree = "<group>"; };
+		ED8B39BB1F62D9D200351699 /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBackground.png; sourceTree = "<group>"; };
+		ED8B39BC1F62D9D200351699 /* loginBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBox.png; sourceTree = "<group>"; };
+		ED8B39BD1F62D9D200351699 /* logoFastTrack_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoFastTrack_small.png; sourceTree = "<group>"; };
+		ED8B39BE1F62D9D200351699 /* logoFastTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoFastTrack.png; sourceTree = "<group>"; };
+		ED8B39BF1F62D9D200351699 /* MarlboroBright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarlboroBright.png; sourceTree = "<group>"; };
+		ED8B39C01F62D9D200351699 /* MarlboroFine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarlboroFine.png; sourceTree = "<group>"; };
+		ED8B39C11F62D9D200351699 /* MarlboroFuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarlboroFuse.png; sourceTree = "<group>"; };
+		ED8B39C21F62D9D200351699 /* navBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBar.png; sourceTree = "<group>"; };
+		ED8B39C31F62D9D200351699 /* numbercircleActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbercircleActive.png; sourceTree = "<group>"; };
+		ED8B39C41F62D9D200351699 /* numbercircleInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbercircleInactive.png; sourceTree = "<group>"; };
+		ED8B39C51F62D9D200351699 /* ordered_approved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ordered_approved.png; sourceTree = "<group>"; };
+		ED8B39C61F62D9D200351699 /* orderhistoryActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orderhistoryActive.png; sourceTree = "<group>"; };
+		ED8B39C71F62D9D200351699 /* orderhistoryInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orderhistoryInactive.png; sourceTree = "<group>"; };
+		ED8B39C81F62D9D200351699 /* packed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = packed.png; sourceTree = "<group>"; };
+		ED8B39C91F62D9D200351699 /* passwordIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passwordIcon.png; sourceTree = "<group>"; };
+		ED8B39CA1F62D9D200351699 /* promo_MarlboroClove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promo_MarlboroClove.png; sourceTree = "<group>"; };
+		ED8B39CB1F62D9D200351699 /* promo_MarlboroIce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promo_MarlboroIce.png; sourceTree = "<group>"; };
+		ED8B39CC1F62D9D200351699 /* promo_MarlboroMenthol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promo_MarlboroMenthol.png; sourceTree = "<group>"; };
+		ED8B39CD1F62D9D200351699 /* promo_NextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promo_NextButton.png; sourceTree = "<group>"; };
+		ED8B39CE1F62D9D200351699 /* promoActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoActive.png; sourceTree = "<group>"; };
+		ED8B39CF1F62D9D200351699 /* promoInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoInactive.png; sourceTree = "<group>"; };
+		ED8B39D01F62D9D200351699 /* shipped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipped.png; sourceTree = "<group>"; };
+		ED8B39D11F62D9D200351699 /* switchButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchButton.png; sourceTree = "<group>"; };
+		ED8B39D21F62D9D200351699 /* switchCross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchCross.png; sourceTree = "<group>"; };
+		ED8B39D31F62D9D200351699 /* switchTick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchTick.png; sourceTree = "<group>"; };
+		ED8B39D41F62D9D200351699 /* trackLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackLine.png; sourceTree = "<group>"; };
+		ED8B39D51F62D9D200351699 /* trackNode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackNode.png; sourceTree = "<group>"; };
+		ED8B39D61F62D9D200351699 /* trackorderActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackorderActive.png; sourceTree = "<group>"; };
+		ED8B39D71F62D9D200351699 /* trackorderInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackorderInactive.png; sourceTree = "<group>"; };
+		ED8B39D81F62D9D200351699 /* userIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userIcon.png; sourceTree = "<group>"; };
+		ED8B39D91F62D9D200351699 /* userPhoto_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userPhoto_small.png; sourceTree = "<group>"; };
+		ED8B39DA1F62D9D200351699 /* userPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userPhoto.png; sourceTree = "<group>"; };
+		ED8B3A081F62D9F600351699 /* backArrowWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrowWhite.png; sourceTree = "<group>"; };
+		ED8B3A0A1F62DAE600351699 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		ED8B3A0B1F62DAE600351699 /* CustomerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerProfileViewController.swift; sourceTree = "<group>"; };
+		ED8B3A0C1F62DAE600351699 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ED8B3A0D1F62DAE600351699 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ED8B3A0E1F62DAE600351699 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
+		ED8B3A0F1F62DAE600351699 /* PromotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
+		ED8B3A101F62DAE600351699 /* TrackOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackOrdersViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED8B39821F62D8E400351699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED8B39991F62D8E400351699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED8B397C1F62D8E400351699 = {
+			isa = PBXGroup;
+			children = (
+				ED8B39871F62D8E400351699 /* FastTrackSales */,
+				ED8B399F1F62D8E400351699 /* FastTrackSalesTests */,
+				ED8B39861F62D8E400351699 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED8B39861F62D8E400351699 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B39851F62D8E400351699 /* FastTrackSales.app */,
+				ED8B399C1F62D8E400351699 /* FastTrackSalesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED8B39871F62D8E400351699 /* FastTrackSales */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B39AD1F62D95C00351699 /* Images */,
+				ED8B39AC1F62D94E00351699 /* Resources */,
+				ED8B39AB1F62D94300351699 /* Controllers */,
+				ED8B39921F62D8E400351699 /* Assets.xcassets */,
+				ED8B39971F62D8E400351699 /* Info.plist */,
+				ED8B398F1F62D8E400351699 /* FastTrackSales.xcdatamodeld */,
+			);
+			path = FastTrackSales;
+			sourceTree = "<group>";
+		};
+		ED8B399F1F62D8E400351699 /* FastTrackSalesTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B39A01F62D8E400351699 /* FastTrackSalesTests.swift */,
+				ED8B39A21F62D8E400351699 /* Info.plist */,
+			);
+			path = FastTrackSalesTests;
+			sourceTree = "<group>";
+		};
+		ED8B39AB1F62D94300351699 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B39881F62D8E400351699 /* AppDelegate.swift */,
+				ED8B3A0A1F62DAE600351699 /* CartViewController.swift */,
+				ED8B3A0B1F62DAE600351699 /* CustomerProfileViewController.swift */,
+				ED8B3A0C1F62DAE600351699 /* HomeViewController.swift */,
+				ED8B3A0D1F62DAE600351699 /* LoginViewController.swift */,
+				ED8B3A0E1F62DAE600351699 /* OrderHistoryViewController.swift */,
+				ED8B3A0F1F62DAE600351699 /* PromotionsViewController.swift */,
+				ED8B3A101F62DAE600351699 /* TrackOrdersViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		ED8B39AC1F62D94E00351699 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B398C1F62D8E400351699 /* Main.storyboard */,
+				ED8B39941F62D8E400351699 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		ED8B39AD1F62D95C00351699 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B3A081F62D9F600351699 /* backArrowWhite.png */,
+				ED8B39AE1F62D9D200351699 /* arrowDown.png */,
+				ED8B39AF1F62D9D200351699 /* calendarIcon.png */,
+				ED8B39B01F62D9D200351699 /* cartActive.png */,
+				ED8B39B11F62D9D200351699 /* cartInactive.png */,
+				ED8B39B21F62D9D200351699 /* delivered.png */,
+				ED8B39B31F62D9D200351699 /* deliveredIcon.png */,
+				ED8B39B41F62D9D200351699 /* editIcon.png */,
+				ED8B39B51F62D9D200351699 /* headerBar.png */,
+				ED8B39B61F62D9D200351699 /* history_LMBlue.png */,
+				ED8B39B71F62D9D200351699 /* history_LMRed.png */,
+				ED8B39B81F62D9D200351699 /* history_MarlboroFuse.png */,
+				ED8B39B91F62D9D200351699 /* L&M_RegularCut_Blue.png */,
+				ED8B39BA1F62D9D200351699 /* L&M_RegularCut_Red.png */,
+				ED8B39BB1F62D9D200351699 /* loginBackground.png */,
+				ED8B39BC1F62D9D200351699 /* loginBox.png */,
+				ED8B39BD1F62D9D200351699 /* logoFastTrack_small.png */,
+				ED8B39BE1F62D9D200351699 /* logoFastTrack.png */,
+				ED8B39BF1F62D9D200351699 /* MarlboroBright.png */,
+				ED8B39C01F62D9D200351699 /* MarlboroFine.png */,
+				ED8B39C11F62D9D200351699 /* MarlboroFuse.png */,
+				ED8B39C21F62D9D200351699 /* navBar.png */,
+				ED8B39C31F62D9D200351699 /* numbercircleActive.png */,
+				ED8B39C41F62D9D200351699 /* numbercircleInactive.png */,
+				ED8B39C51F62D9D200351699 /* ordered_approved.png */,
+				ED8B39C61F62D9D200351699 /* orderhistoryActive.png */,
+				ED8B39C71F62D9D200351699 /* orderhistoryInactive.png */,
+				ED8B39C81F62D9D200351699 /* packed.png */,
+				ED8B39C91F62D9D200351699 /* passwordIcon.png */,
+				ED8B39CA1F62D9D200351699 /* promo_MarlboroClove.png */,
+				ED8B39CB1F62D9D200351699 /* promo_MarlboroIce.png */,
+				ED8B39CC1F62D9D200351699 /* promo_MarlboroMenthol.png */,
+				ED8B39CD1F62D9D200351699 /* promo_NextButton.png */,
+				ED8B39CE1F62D9D200351699 /* promoActive.png */,
+				ED8B39CF1F62D9D200351699 /* promoInactive.png */,
+				ED8B39D01F62D9D200351699 /* shipped.png */,
+				ED8B39D11F62D9D200351699 /* switchButton.png */,
+				ED8B39D21F62D9D200351699 /* switchCross.png */,
+				ED8B39D31F62D9D200351699 /* switchTick.png */,
+				ED8B39D41F62D9D200351699 /* trackLine.png */,
+				ED8B39D51F62D9D200351699 /* trackNode.png */,
+				ED8B39D61F62D9D200351699 /* trackorderActive.png */,
+				ED8B39D71F62D9D200351699 /* trackorderInactive.png */,
+				ED8B39D81F62D9D200351699 /* userIcon.png */,
+				ED8B39D91F62D9D200351699 /* userPhoto_small.png */,
+				ED8B39DA1F62D9D200351699 /* userPhoto.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED8B39841F62D8E400351699 /* FastTrackSales */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED8B39A51F62D8E400351699 /* Build configuration list for PBXNativeTarget "FastTrackSales" */;
+			buildPhases = (
+				ED8B39811F62D8E400351699 /* Sources */,
+				ED8B39821F62D8E400351699 /* Frameworks */,
+				ED8B39831F62D8E400351699 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastTrackSales;
+			productName = FastTrackSales;
+			productReference = ED8B39851F62D8E400351699 /* FastTrackSales.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED8B399B1F62D8E400351699 /* FastTrackSalesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED8B39A81F62D8E400351699 /* Build configuration list for PBXNativeTarget "FastTrackSalesTests" */;
+			buildPhases = (
+				ED8B39981F62D8E400351699 /* Sources */,
+				ED8B39991F62D8E400351699 /* Frameworks */,
+				ED8B399A1F62D8E400351699 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED8B399E1F62D8E400351699 /* PBXTargetDependency */,
+			);
+			name = FastTrackSalesTests;
+			productName = FastTrackSalesTests;
+			productReference = ED8B399C1F62D8E400351699 /* FastTrackSalesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED8B397D1F62D8E400351699 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Bikash Sukla Das";
+				TargetAttributes = {
+					ED8B39841F62D8E400351699 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9DDPTP86JE;
+						ProvisioningStyle = Manual;
+					};
+					ED8B399B1F62D8E400351699 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9DDPTP86JE;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED8B39841F62D8E400351699;
+					};
+				};
+			};
+			buildConfigurationList = ED8B39801F62D8E400351699 /* Build configuration list for PBXProject "FastTrackSales" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED8B397C1F62D8E400351699;
+			productRefGroup = ED8B39861F62D8E400351699 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED8B39841F62D8E400351699 /* FastTrackSales */,
+				ED8B399B1F62D8E400351699 /* FastTrackSalesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED8B39831F62D8E400351699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED8B3A021F62D9D200351699 /* trackNode.png in Resources */,
+				ED8B3A091F62D9F600351699 /* backArrowWhite.png in Resources */,
+				ED8B39961F62D8E400351699 /* LaunchScreen.storyboard in Resources */,
+				ED8B39F51F62D9D200351699 /* packed.png in Resources */,
+				ED8B39EC1F62D9D200351699 /* MarlboroBright.png in Resources */,
+				ED8B39F21F62D9D200351699 /* ordered_approved.png in Resources */,
+				ED8B39DC1F62D9D200351699 /* calendarIcon.png in Resources */,
+				ED8B39ED1F62D9D200351699 /* MarlboroFine.png in Resources */,
+				ED8B39931F62D8E400351699 /* Assets.xcassets in Resources */,
+				ED8B39EE1F62D9D200351699 /* MarlboroFuse.png in Resources */,
+				ED8B3A071F62D9D200351699 /* userPhoto.png in Resources */,
+				ED8B39DE1F62D9D200351699 /* cartInactive.png in Resources */,
+				ED8B39EF1F62D9D200351699 /* navBar.png in Resources */,
+				ED8B39E21F62D9D200351699 /* headerBar.png in Resources */,
+				ED8B39DF1F62D9D200351699 /* delivered.png in Resources */,
+				ED8B39E41F62D9D200351699 /* history_LMRed.png in Resources */,
+				ED8B39F71F62D9D200351699 /* promo_MarlboroClove.png in Resources */,
+				ED8B39F41F62D9D200351699 /* orderhistoryInactive.png in Resources */,
+				ED8B39FB1F62D9D200351699 /* promoActive.png in Resources */,
+				ED8B39F61F62D9D200351699 /* passwordIcon.png in Resources */,
+				ED8B39F81F62D9D200351699 /* promo_MarlboroIce.png in Resources */,
+				ED8B398E1F62D8E400351699 /* Main.storyboard in Resources */,
+				ED8B39DB1F62D9D200351699 /* arrowDown.png in Resources */,
+				ED8B39E51F62D9D200351699 /* history_MarlboroFuse.png in Resources */,
+				ED8B39FC1F62D9D200351699 /* promoInactive.png in Resources */,
+				ED8B39E61F62D9D200351699 /* L&M_RegularCut_Blue.png in Resources */,
+				ED8B3A031F62D9D200351699 /* trackorderActive.png in Resources */,
+				ED8B39F11F62D9D200351699 /* numbercircleInactive.png in Resources */,
+				ED8B3A041F62D9D200351699 /* trackorderInactive.png in Resources */,
+				ED8B39E01F62D9D200351699 /* deliveredIcon.png in Resources */,
+				ED8B39EB1F62D9D200351699 /* logoFastTrack.png in Resources */,
+				ED8B39FA1F62D9D200351699 /* promo_NextButton.png in Resources */,
+				ED8B39FD1F62D9D200351699 /* shipped.png in Resources */,
+				ED8B39E11F62D9D200351699 /* editIcon.png in Resources */,
+				ED8B3A061F62D9D200351699 /* userPhoto_small.png in Resources */,
+				ED8B39E81F62D9D200351699 /* loginBackground.png in Resources */,
+				ED8B39FF1F62D9D200351699 /* switchCross.png in Resources */,
+				ED8B39F01F62D9D200351699 /* numbercircleActive.png in Resources */,
+				ED8B39DD1F62D9D200351699 /* cartActive.png in Resources */,
+				ED8B3A011F62D9D200351699 /* trackLine.png in Resources */,
+				ED8B3A051F62D9D200351699 /* userIcon.png in Resources */,
+				ED8B39E31F62D9D200351699 /* history_LMBlue.png in Resources */,
+				ED8B3A001F62D9D200351699 /* switchTick.png in Resources */,
+				ED8B39FE1F62D9D200351699 /* switchButton.png in Resources */,
+				ED8B39E71F62D9D200351699 /* L&M_RegularCut_Red.png in Resources */,
+				ED8B39E91F62D9D200351699 /* loginBox.png in Resources */,
+				ED8B39EA1F62D9D200351699 /* logoFastTrack_small.png in Resources */,
+				ED8B39F31F62D9D200351699 /* orderhistoryActive.png in Resources */,
+				ED8B39F91F62D9D200351699 /* promo_MarlboroMenthol.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED8B399A1F62D8E400351699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED8B39811F62D8E400351699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED8B3A151F62DAE600351699 /* OrderHistoryViewController.swift in Sources */,
+				ED8B3A171F62DAE600351699 /* TrackOrdersViewController.swift in Sources */,
+				ED8B3A141F62DAE600351699 /* LoginViewController.swift in Sources */,
+				ED8B3A111F62DAE600351699 /* CartViewController.swift in Sources */,
+				ED8B3A161F62DAE600351699 /* PromotionsViewController.swift in Sources */,
+				ED8B39891F62D8E400351699 /* AppDelegate.swift in Sources */,
+				ED8B3A121F62DAE600351699 /* CustomerProfileViewController.swift in Sources */,
+				ED8B39911F62D8E400351699 /* FastTrackSales.xcdatamodeld in Sources */,
+				ED8B3A131F62DAE600351699 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED8B39981F62D8E400351699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED8B39A11F62D8E400351699 /* FastTrackSalesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED8B399E1F62D8E400351699 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED8B39841F62D8E400351699 /* FastTrackSales */;
+			targetProxy = ED8B399D1F62D8E400351699 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED8B398C1F62D8E400351699 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED8B398D1F62D8E400351699 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED8B39941F62D8E400351699 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED8B39951F62D8E400351699 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED8B39A31F62D8E400351699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		ED8B39A41F62D8E400351699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED8B39A61F62D8E400351699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9DDPTP86JE;
+				INFOPLIST_FILE = FastTrackSales/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pmico.FastTrackSales;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e24fd4fa-96c2-485e-bb1d-3ddb0af6a2ce";
+				PROVISIONING_PROFILE_SPECIFIER = "iSMS@iOSDevelopment";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ED8B39A71F62D8E400351699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9DDPTP86JE;
+				INFOPLIST_FILE = FastTrackSales/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pmico.FastTrackSales;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e24fd4fa-96c2-485e-bb1d-3ddb0af6a2ce";
+				PROVISIONING_PROFILE_SPECIFIER = "iSMS@iOSDevelopment";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		ED8B39A91F62D8E400351699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9DDPTP86JE;
+				INFOPLIST_FILE = FastTrackSalesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pmico.FastTrackSalesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastTrackSales.app/FastTrackSales";
+			};
+			name = Debug;
+		};
+		ED8B39AA1F62D8E400351699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9DDPTP86JE;
+				INFOPLIST_FILE = FastTrackSalesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pmico.FastTrackSalesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastTrackSales.app/FastTrackSales";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED8B39801F62D8E400351699 /* Build configuration list for PBXProject "FastTrackSales" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED8B39A31F62D8E400351699 /* Debug */,
+				ED8B39A41F62D8E400351699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED8B39A51F62D8E400351699 /* Build configuration list for PBXNativeTarget "FastTrackSales" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED8B39A61F62D8E400351699 /* Debug */,
+				ED8B39A71F62D8E400351699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED8B39A81F62D8E400351699 /* Build configuration list for PBXNativeTarget "FastTrackSalesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED8B39A91F62D8E400351699 /* Debug */,
+				ED8B39AA1F62D8E400351699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ED8B398F1F62D8E400351699 /* FastTrackSales.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ED8B39901F62D8E400351699 /* FastTrackSales.xcdatamodel */,
+			);
+			currentVersion = ED8B39901F62D8E400351699 /* FastTrackSales.xcdatamodel */;
+			path = FastTrackSales.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ED8B397D1F62D8E400351699 /* Project object */;
+}
