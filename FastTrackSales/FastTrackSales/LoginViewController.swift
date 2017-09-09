@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class LoginViewController: UIViewController,UITextFieldDelegate {
 
@@ -22,6 +23,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         // Do any additional setup after loading the view.
         tfUsername?.delegate = self
         tfPassword?.delegate = self
+        btnLogin?.layer.cornerRadius = 5
+        btnLogin?.layer.masksToBounds = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

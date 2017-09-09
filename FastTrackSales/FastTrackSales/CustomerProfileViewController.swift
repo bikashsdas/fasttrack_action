@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class CustomerProfileViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
 
@@ -36,6 +37,10 @@ class CustomerProfileViewController: UIViewController,UITextFieldDelegate,UIText
         tfContact?.isUserInteractionEnabled = false
         tfEmail?.isUserInteractionEnabled = false
         tvAddress?.isUserInteractionEnabled = false
+        btnSave?.layer.cornerRadius = 5
+        btnSave?.layer.masksToBounds = true
+        btnCancel?.layer.cornerRadius = 5
+        btnCancel?.layer.masksToBounds = true
         
         self.changeActionButtonsState(isEnable: false)
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 /*Note for reference:
  View tag number -->
@@ -24,7 +25,7 @@ import UIKit
  
  */
 
-class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
+class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate,UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet var btnBack: UIButton?
     @IBOutlet var btnLogout: UIButton?
@@ -35,10 +36,17 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     @IBOutlet var ivCustomerProfilePic: UIImageView?
     @IBOutlet var lblHeaderTitle: UILabel?
     
+    @IBOutlet var colVwProduct: UICollectionView?
+    
     var isHomeScreen:Bool = true
     let btnLogoutPosActual:CGPoint = CGPoint(x:76, y:30)
     let btnLogoutPosTransform:CGPoint = CGPoint(x:16, y:30)
     let btnSize:CGSize = CGSize(width:42, height:36)
+    
+    var productsName = ["L&M REGULAR CUT RED 100 BOX 19 201508", "L&M REGULAR CUT BLUE 100 BOX 19 201508", "Marlboro Fuse Beyond 19s 20150101 56kr", "MARLBORO BRIGHT BEYOND 201510", "MARLBORO FINE BEYOND 19s 201511", "Marlboro Fuse Beyond 19s 20150101 (OLD-PACK)"]
+    var productsQuantuty = ["140 Box(7.00$/Box)", "110 Box(6.45$/Box)", "90 Box(5.95$/Box)", "165 Box(7.25$/Box)", "180 Box(6.80$/Box)", "140 Box(7.00$/Box)"]
+    var productImages = ["L&M_RegularCut_Red.png", "L&M_RegularCut_Blue.png", "MarlboroFuse.png", "MarlboroBright.png", "MarlboroFine.png", "MarlboroFuse.png"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,35 +127,103 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
                 isHomeScreen = true
                 self.refreshHomeController()
             }
+            if viewRef.tag == 5{
+                viewRef.removeFromSuperview()
+                isHomeScreen = true
+                self.refreshHomeController()
+            }
+            if viewRef.tag == 6{
+                viewRef.removeFromSuperview()
+                isHomeScreen = true
+                self.refreshHomeController()
+            }
+            if viewRef.tag == 3{
+                viewRef.removeFromSuperview()
+                isHomeScreen = true
+                self.refreshHomeController()
+            }
+            if viewRef.tag == 4{
+                viewRef.removeFromSuperview()
+                isHomeScreen = true
+                self.refreshHomeController()
+            }
         }
         
     }
     
     @IBAction func btnPromotionsPressed(_sender: UIButton){
+        lblHeaderTitle?.text = "Promotions"
+        isHomeScreen = false
         
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let promotionsObj = storyBoard.instantiateViewController(withIdentifier: "PromotionsSBID") as! PromotionsViewController
+        promotionsObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
+        self.view.addSubview(promotionsObj.view)
+        
+        self.refreshHomeController()
     }
     
     @IBAction func btnCartPressed(_sender: UIButton){
+        lblHeaderTitle?.text = "Cart"
+        isHomeScreen = false
         
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let cartObj = storyBoard.instantiateViewController(withIdentifier: "CartSBID") as! CartViewController
+        cartObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
+        self.view.addSubview(cartObj.view)
+        
+        self.refreshHomeController()
     }
     
     @IBAction func btnTrackOrdersPressed(_sender: UIButton){
+        lblHeaderTitle?.text = "Track Orders"
+        isHomeScreen = false
         
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let trackOrdersObj = storyBoard.instantiateViewController(withIdentifier: "TrackOrdersSBID") as! TrackOrdersViewController
+        trackOrdersObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
+        self.view.addSubview(trackOrdersObj.view)
+        
+        self.refreshHomeController()
     }
     
     @IBAction func btnOrderHistoryPressed(_sender: UIButton){
+        lblHeaderTitle?.text = "Order History"
+        isHomeScreen = false
         
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let orderHistoryObj = storyBoard.instantiateViewController(withIdentifier: "OrderHistorySBID") as! OrderHistoryViewController
+        orderHistoryObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
+        self.view.addSubview(orderHistoryObj.view)
+        
+        self.refreshHomeController()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
     }
-    */
+    
+    //    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    //        return productsName.count
+    //    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductItemCollectionCellID", for: indexPath as IndexPath) as! ProductItemCollectionViewCell
+        
+        cell.btnAddToCart?.layer.cornerRadius = 5
+        cell.btnAddToCart?.layer.masksToBounds = true
+        cell.lblItemNameText?.text = productsName[indexPath.item]
+        cell.lblAvailableQuantityText?.text = productsQuantuty[indexPath.item]
+        cell.imgVwPoductItem?.image = UIImage(named: productImages[indexPath.item])
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("You selected cell #\(indexPath.item)!")
+    }
+    
 
 }

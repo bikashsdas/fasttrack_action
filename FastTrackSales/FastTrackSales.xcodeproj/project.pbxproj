@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06607F141F63C18B00E95E0A /* PromotionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06607F131F63C18B00E95E0A /* PromotionsTableViewCell.swift */; };
+		06607F161F63D1E300E95E0A /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06607F151F63D1E300E95E0A /* CartTableViewCell.swift */; };
+		06607F181F63DC6100E95E0A /* cross_cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 06607F171F63DC6100E95E0A /* cross_cart.png */; };
+		06607F1A1F63E47D00E95E0A /* ProductItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06607F191F63E47D00E95E0A /* ProductItemCollectionViewCell.swift */; };
+		0688931A1F63080A00E7117E /* TrackOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068893191F63080A00E7117E /* TrackOrdersTableViewCell.swift */; };
+		0688931D1F63319E00E7117E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688931C1F63319E00E7117E /* QuartzCore.framework */; };
+		0688931F1F633CB400E7117E /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0688931E1F633CB400E7117E /* OrderHistoryTableViewCell.swift */; };
 		ED8B39891F62D8E400351699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B39881F62D8E400351699 /* AppDelegate.swift */; };
 		ED8B398E1F62D8E400351699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8B398C1F62D8E400351699 /* Main.storyboard */; };
 		ED8B39911F62D8E400351699 /* FastTrackSales.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED8B398F1F62D8E400351699 /* FastTrackSales.xcdatamodeld */; };
@@ -79,6 +86,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06607F131F63C18B00E95E0A /* PromotionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsTableViewCell.swift; sourceTree = "<group>"; };
+		06607F151F63D1E300E95E0A /* CartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		06607F171F63DC6100E95E0A /* cross_cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross_cart.png; sourceTree = "<group>"; };
+		06607F191F63E47D00E95E0A /* ProductItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		068893191F63080A00E7117E /* TrackOrdersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackOrdersTableViewCell.swift; sourceTree = "<group>"; };
+		0688931C1F63319E00E7117E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0688931E1F633CB400E7117E /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		ED8B39851F62D8E400351699 /* FastTrackSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastTrackSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8B39881F62D8E400351699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8B398D1F62D8E400351699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0688931D1F63319E00E7117E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,12 +177,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		068893181F6307EE00E7117E /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				068893191F63080A00E7117E /* TrackOrdersTableViewCell.swift */,
+				0688931E1F633CB400E7117E /* OrderHistoryTableViewCell.swift */,
+				06607F131F63C18B00E95E0A /* PromotionsTableViewCell.swift */,
+				06607F151F63D1E300E95E0A /* CartTableViewCell.swift */,
+				06607F191F63E47D00E95E0A /* ProductItemCollectionViewCell.swift */,
+			);
+			name = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		0688931B1F63319E00E7117E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0688931C1F63319E00E7117E /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED8B397C1F62D8E400351699 = {
 			isa = PBXGroup;
 			children = (
 				ED8B39871F62D8E400351699 /* FastTrackSales */,
 				ED8B399F1F62D8E400351699 /* FastTrackSalesTests */,
 				ED8B39861F62D8E400351699 /* Products */,
+				0688931B1F63319E00E7117E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +219,7 @@
 		ED8B39871F62D8E400351699 /* FastTrackSales */ = {
 			isa = PBXGroup;
 			children = (
+				068893181F6307EE00E7117E /* Custom Cell */,
 				ED8B39AD1F62D95C00351699 /* Images */,
 				ED8B39AC1F62D94E00351699 /* Resources */,
 				ED8B39AB1F62D94300351699 /* Controllers */,
@@ -231,6 +268,7 @@
 			children = (
 				ED8B3A081F62D9F600351699 /* backArrowWhite.png */,
 				ED8B39AE1F62D9D200351699 /* arrowDown.png */,
+				06607F171F63DC6100E95E0A /* cross_cart.png */,
 				ED8B39AF1F62D9D200351699 /* calendarIcon.png */,
 				ED8B39B01F62D9D200351699 /* cartActive.png */,
 				ED8B39B11F62D9D200351699 /* cartInactive.png */,
@@ -330,7 +368,7 @@
 					ED8B39841F62D8E400351699 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 9DDPTP86JE;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					ED8B399B1F62D8E400351699 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -380,6 +418,7 @@
 				ED8B39E21F62D9D200351699 /* headerBar.png in Resources */,
 				ED8B39DF1F62D9D200351699 /* delivered.png in Resources */,
 				ED8B39E41F62D9D200351699 /* history_LMRed.png in Resources */,
+				06607F181F63DC6100E95E0A /* cross_cart.png in Resources */,
 				ED8B39F71F62D9D200351699 /* promo_MarlboroClove.png in Resources */,
 				ED8B39F41F62D9D200351699 /* orderhistoryInactive.png in Resources */,
 				ED8B39FB1F62D9D200351699 /* promoActive.png in Resources */,
@@ -431,12 +470,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8B3A151F62DAE600351699 /* OrderHistoryViewController.swift in Sources */,
+				06607F141F63C18B00E95E0A /* PromotionsTableViewCell.swift in Sources */,
 				ED8B3A171F62DAE600351699 /* TrackOrdersViewController.swift in Sources */,
+				0688931F1F633CB400E7117E /* OrderHistoryTableViewCell.swift in Sources */,
+				0688931A1F63080A00E7117E /* TrackOrdersTableViewCell.swift in Sources */,
 				ED8B3A141F62DAE600351699 /* LoginViewController.swift in Sources */,
 				ED8B3A111F62DAE600351699 /* CartViewController.swift in Sources */,
 				ED8B3A161F62DAE600351699 /* PromotionsViewController.swift in Sources */,
 				ED8B39891F62D8E400351699 /* AppDelegate.swift in Sources */,
+				06607F161F63D1E300E95E0A /* CartTableViewCell.swift in Sources */,
 				ED8B3A121F62DAE600351699 /* CustomerProfileViewController.swift in Sources */,
+				06607F1A1F63E47D00E95E0A /* ProductItemCollectionViewCell.swift in Sources */,
 				ED8B39911F62D8E400351699 /* FastTrackSales.xcdatamodeld in Sources */,
 				ED8B3A131F62DAE600351699 /* HomeViewController.swift in Sources */,
 			);
@@ -579,14 +623,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9DDPTP86JE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FastTrackSales/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pmico.FastTrackSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e24fd4fa-96c2-485e-bb1d-3ddb0af6a2ce";
-				PROVISIONING_PROFILE_SPECIFIER = "iSMS@iOSDevelopment";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -595,14 +640,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9DDPTP86JE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FastTrackSales/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pmico.FastTrackSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e24fd4fa-96c2-485e-bb1d-3ddb0af6a2ce";
-				PROVISIONING_PROFILE_SPECIFIER = "iSMS@iOSDevelopment";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -656,6 +702,7 @@
 				ED8B39A71F62D8E400351699 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED8B39A81F62D8E400351699 /* Build configuration list for PBXNativeTarget "FastTrackSalesTests" */ = {
 			isa = XCConfigurationList;
@@ -664,6 +711,7 @@
 				ED8B39AA1F62D8E400351699 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
