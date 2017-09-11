@@ -25,7 +25,7 @@ import QuartzCore
  
  */
 
-class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate,UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate,UICollectionViewDataSource, UICollectionViewDelegate,UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var btnBack: UIButton?
     @IBOutlet var btnLogout: UIButton?
@@ -38,6 +38,50 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     
     @IBOutlet var colVwProduct: UICollectionView?
     
+    @IBOutlet var profileView: UIView?
+    @IBOutlet var promotiondView: UIView?
+    @IBOutlet var cartView: UIView?
+    @IBOutlet var trackOrderView: UIView?
+    @IBOutlet var orderHistoryView: UIView?
+    
+    
+    //Profile setting
+    @IBOutlet var btnCancel: UIButton?
+    @IBOutlet var btnSave: UIButton?
+    @IBOutlet var btnEditContact: UIButton?
+    @IBOutlet var btnEditEmail: UIButton?
+    @IBOutlet var btnEditAddress: UIButton?
+    @IBOutlet var btnEditProfilePhoto: UIButton?
+    @IBOutlet var ivCustomerProfilePicLarge: UIImageView?
+    @IBOutlet var tfName: UITextField?
+    @IBOutlet var tfContact: UITextField?
+    @IBOutlet var tfEmail: UITextField?
+    @IBOutlet var tvAddress: UITextView?
+    ////
+    
+    //Promotion view component
+    @IBOutlet var tblVwPromotions: UITableView?
+    @IBOutlet var lblPromotionTitleText: UILabel?
+    ///////
+    
+     //Cart view component
+    @IBOutlet var tblVwCart: UITableView?
+    @IBOutlet var lblTotalSubText: UILabel?
+    @IBOutlet var lblTotalValueText: UILabel?
+    @IBOutlet var btnCancelCart: UIButton?
+    @IBOutlet var btnOrderNow: UIButton?
+    ////
+    
+    //Track order
+    @IBOutlet var tblVwTrackOrders: UITableView?
+    
+    ///////
+    
+    //Order history
+     @IBOutlet var tblVwOrderHistory: UITableView?
+    
+    ///////
+    
     var isHomeScreen:Bool = true
     let btnLogoutPosActual:CGPoint = CGPoint(x:76, y:30)
     let btnLogoutPosTransform:CGPoint = CGPoint(x:16, y:30)
@@ -46,6 +90,10 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     var productsName = ["L&M REGULAR CUT RED 100 BOX 19 201508", "L&M REGULAR CUT BLUE 100 BOX 19 201508", "Marlboro Fuse Beyond 19s 20150101 56kr", "MARLBORO BRIGHT BEYOND 201510", "MARLBORO FINE BEYOND 19s 201511", "Marlboro Fuse Beyond 19s 20150101 (OLD-PACK)"]
     var productsQuantuty = ["140 Box(7.00$/Box)", "110 Box(6.45$/Box)", "90 Box(5.95$/Box)", "165 Box(7.25$/Box)", "180 Box(6.80$/Box)", "140 Box(7.00$/Box)"]
     var productImages = ["L&M_RegularCut_Red.png", "L&M_RegularCut_Blue.png", "MarlboroFuse.png", "MarlboroBright.png", "MarlboroFine.png", "MarlboroFuse.png"]
+    
+    var productImagesPromotions = ["promo_MarlboroClove.png", "promo_MarlboroIce.png", "promo_MarlboroMenthol.png"]
+    var productImagesCart = ["history_LMRed.png","history_LMBlue.png"]
+    var productImagesOrderHistory = ["history_LMBlue.png", "history_LMRed.png", "history_MarlboroFuse.png"]
     
 
     override func viewDidLoad() {
@@ -57,6 +105,60 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profilePicTapped))
         ivCustomerProfilePic?.isUserInteractionEnabled = true
         ivCustomerProfilePic?.addGestureRecognizer(tapGestureRecognizer)
+        colVwProduct?.delegate = self;
+        colVwProduct?.dataSource = self;
+        
+        profileView?.isHidden = true
+        promotiondView?.isHidden = true
+        cartView?.isHidden = true
+        trackOrderView?.isHidden = true
+        orderHistoryView?.isHidden = true
+        
+        //Profile setting
+        tfName?.delegate = self
+        tfContact?.delegate = self
+        tfEmail?.delegate = self
+        tvAddress?.delegate = self
+        
+        tfName?.isUserInteractionEnabled = false
+        tfContact?.isUserInteractionEnabled = false
+        tfEmail?.isUserInteractionEnabled = false
+        tvAddress?.isUserInteractionEnabled = false
+        btnSave?.layer.cornerRadius = 5
+        btnSave?.layer.masksToBounds = true
+        btnCancel?.layer.cornerRadius = 5
+        btnCancel?.layer.masksToBounds = true
+        
+        self.changeActionButtonsState(isEnable: false)
+        /////
+        
+        //Promotions
+        tblVwPromotions?.delegate = self;
+        tblVwPromotions?.dataSource = self;
+        self.tblVwPromotions?.separatorStyle = UITableViewCellSeparatorStyle.none
+        /////
+        
+        ///Cart
+        tblVwCart?.delegate = self;
+        tblVwCart?.dataSource = self;
+        self.tblVwCart?.separatorStyle = UITableViewCellSeparatorStyle.none
+        btnCancelCart?.layer.cornerRadius = 5
+        btnCancelCart?.layer.masksToBounds = true
+        btnOrderNow?.layer.cornerRadius = 5
+        btnOrderNow?.layer.masksToBounds = true
+        //////
+        
+        //Track order
+        tblVwTrackOrders?.delegate = self;
+        tblVwTrackOrders?.dataSource = self;
+        self.tblVwTrackOrders?.separatorStyle = UITableViewCellSeparatorStyle.none
+        ////////////
+        
+        //Order History
+        tblVwOrderHistory?.delegate = self;
+        tblVwOrderHistory?.dataSource = self;
+        self.tblVwOrderHistory?.separatorStyle = UITableViewCellSeparatorStyle.none
+        ///////
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,11 +199,16 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         //btnBack?.isHidden = false
         //btnLogout?.frame = CGRect(x:btnLogoutPosActual.x,y:btnLogoutPosActual.y,width:btnSize.width,height:btnSize.height)
         
+        /*
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let customerProfileObj = storyBoard.instantiateViewController(withIdentifier: "CustomerProfileSBID") as! CustomerProfileViewController
         customerProfileObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(customerProfileObj.view)
+        self.view.addSubview(customerProfileObj.view)*/
         
+        profileView?.frame = CGRect(x:10, y:94, width:1004, height:536)
+        profileView?.isHidden = false
+        
+        self.clearSubviewsForViewWithTag(viewTag: 2)
         self.refreshHomeController()
     }
     
@@ -120,93 +227,126 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     
     @IBAction func btnBackPressed(_sender: UIButton){
         
+        tfContact?.resignFirstResponder()
+        tfEmail?.resignFirstResponder()
+        tvAddress?.resignFirstResponder()
 
         for viewRef:UIView in self.view.subviews{
+            
             if viewRef.tag == 2{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 5{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 6{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 3{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 4{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
         }
+        colVwProduct?.isHidden=false
+        colVwProduct?.reloadData()
         
     }
     
     @IBAction func btnPromotionsPressed(_sender: UIButton){
         lblHeaderTitle?.text = "Promotions"
         isHomeScreen = false
-        
+        /*
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let promotionsObj = storyBoard.instantiateViewController(withIdentifier: "PromotionsSBID") as! PromotionsViewController
         promotionsObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
         self.view.addSubview(promotionsObj.view)
+        self.clearSubviewsForViewWithTag(viewTag: 3)*/
         
+        promotiondView?.frame = CGRect(x:10, y:94, width:1024, height:536)
+        promotiondView?.isHidden = false
+        
+        self.clearSubviewsForViewWithTag(viewTag: 3)
         self.refreshHomeController()
+        tblVwPromotions?.reloadData()
     }
     
     @IBAction func btnCartPressed(_sender: UIButton){
         lblHeaderTitle?.text = "Cart"
         isHomeScreen = false
-        
+        /*
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let cartObj = storyBoard.instantiateViewController(withIdentifier: "CartSBID") as! CartViewController
         cartObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
         self.view.addSubview(cartObj.view)
+        self.clearSubviewsForViewWithTag(viewTag: 4)*/
         
+        cartView?.frame = CGRect(x:10, y:94, width:1024, height:536)
+        cartView?.isHidden = false
+        
+        self.clearSubviewsForViewWithTag(viewTag: 4)
         self.refreshHomeController()
+        tblVwCart?.reloadData()
     }
     
     @IBAction func btnTrackOrdersPressed(_sender: UIButton){
         lblHeaderTitle?.text = "Track Orders"
         isHomeScreen = false
         
+        /*
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let trackOrdersObj = storyBoard.instantiateViewController(withIdentifier: "TrackOrdersSBID") as! TrackOrdersViewController
         trackOrdersObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
         self.view.addSubview(trackOrdersObj.view)
+        self.clearSubviewsForViewWithTag(viewTag: 5)*/
         
+        trackOrderView?.frame = CGRect(x:10, y:94, width:1024, height:536)
+        trackOrderView?.isHidden = false
+        
+        self.clearSubviewsForViewWithTag(viewTag: 5)
         self.refreshHomeController()
+        tblVwTrackOrders?.reloadData()
     }
     
     @IBAction func btnOrderHistoryPressed(_sender: UIButton){
         lblHeaderTitle?.text = "Order History"
         isHomeScreen = false
-        
+        /*
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let orderHistoryObj = storyBoard.instantiateViewController(withIdentifier: "OrderHistorySBID") as! OrderHistoryViewController
         orderHistoryObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
         self.view.addSubview(orderHistoryObj.view)
+        self.clearSubviewsForViewWithTag(viewTag: 6)*/
         
+        orderHistoryView?.frame = CGRect(x:10, y:94, width:1024, height:536)
+        orderHistoryView?.isHidden = false
+        
+        self.clearSubviewsForViewWithTag(viewTag: 6)
         self.refreshHomeController()
+        tblVwOrderHistory?.reloadData()
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
     }
-    
-    //    func numberOfSections(in collectionView: UICollectionView) -> Int {
-    //        return productsName.count
-    //    }
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -225,5 +365,148 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         print("You selected cell #\(indexPath.item)!")
     }
     
+    func clearSubviewsForViewWithTag(viewTag: NSInteger){
+        
+        colVwProduct?.isHidden=true
+        
+        for viewRef:UIView in self.view.subviews{
+            if ((viewRef.tag != 1) && (viewRef.tag != 0)) && (viewRef.tag != viewTag) {
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
+                
+            }
+        }
+    }
+    
+    //func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       // NSLog("Table view scroll detected at offset: %f", scrollView.contentOffset.y)
+    //}
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == tblVwPromotions{
+            return 3
+        }
+        else if tableView == tblVwCart{
+            return 2
+        }
+        else if tableView == tblVwTrackOrders{
+            return 3
+        }
+        else if tableView == tblVwOrderHistory{
+            return 3
+        }
+        
+        return 1
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
+        
+        if tableView == tblVwPromotions{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PromotionsCellID", for: indexPath) as! PromotionsTableViewCell
+            cell.selectionStyle = .none
+            cell.isUserInteractionEnabled = false
+            cell.imgVwPromoProduct?.image = UIImage(named: productImagesPromotions[indexPath.row])
+            return cell
+        }
+        
+        else if tableView == tblVwCart{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CartCellID", for: indexPath) as! CartTableViewCell
+            cell.selectionStyle = .none
+            cell.isUserInteractionEnabled = false
+            cell.btnCancelOrDelete?.layer.cornerRadius = 5
+            cell.btnCancelOrDelete?.layer.masksToBounds = true
+            cell.imgVwProductOrder?.image = UIImage(named: productImagesCart[indexPath.row])
+            return cell
+        }
+        
+        else if tableView == tblVwTrackOrders{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TrackOrdersCellID", for: indexPath) as! TrackOrdersTableViewCell
+            cell.selectionStyle = .none
+            cell.isUserInteractionEnabled = false
+            cell.btnCancelOrder?.layer.cornerRadius = 5
+            cell.btnCancelOrder?.layer.masksToBounds = true
+            cell.btnViewOrderDetails?.layer.cornerRadius = 5
+            cell.btnViewOrderDetails?.layer.masksToBounds = true
+        }
+        else if tableView == tblVwOrderHistory{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OrderHistoryCellID", for: indexPath) as! OrderHistoryTableViewCell
+            cell.selectionStyle = .none
+            cell.isUserInteractionEnabled = false
+            cell.btnVwDetailsText?.layer.cornerRadius = 5
+            cell.btnVwDetailsText?.layer.masksToBounds = true
+            cell.imgVwProduct?.image = UIImage(named: productImagesOrderHistory[indexPath.row])
+        }
+   
+        return cell
+    }
+    
+    //Profile Setting
+    func changeActionButtonsState(isEnable:Bool) {
+        if isEnable {
+            btnSave?.isEnabled = true
+            btnCancel?.isEnabled = true
+        }else{
+            btnSave?.isEnabled = false
+            btnCancel?.isEnabled = false
+        }
+    }
+    
+    func setEditableFieldUserInteraction(userInteractionState: Bool) {
+        
+        tfContact?.isUserInteractionEnabled = userInteractionState
+        tfEmail?.isUserInteractionEnabled = userInteractionState
+        tvAddress?.isUserInteractionEnabled = userInteractionState
+        
+    }
+    
+    //MARK:- Profile settings buttons actions
+    
+    @IBAction func btnCancelPressed(_sender: UIButton){
+        self.changeActionButtonsState(isEnable: false)
+        self.setEditableFieldUserInteraction(userInteractionState: false)
+    }
+    
+    @IBAction func btnSavePressed(_sender: UIButton){
+        self.changeActionButtonsState(isEnable: false)
+        self.setEditableFieldUserInteraction(userInteractionState: false)
+    }
+    
+    @IBAction func btnEditContactPressed(_sender: UIButton){
+        self.changeActionButtonsState(isEnable: true)
+        tfContact?.isUserInteractionEnabled = true
+        tfContact?.becomeFirstResponder()
+    }
+    @IBAction func btnEditEmailPressed(_sender: UIButton){
+        self.changeActionButtonsState(isEnable: true)
+        tfEmail?.isUserInteractionEnabled = true
+        tfEmail?.becomeFirstResponder()
+    }
+    @IBAction func btnEditAddressPressed(_sender: UIButton){
+        self.changeActionButtonsState(isEnable: true)
+        tvAddress?.isUserInteractionEnabled = true
+        tvAddress?.becomeFirstResponder()
+    }
+    
+    @IBAction func btnEditProfilePhoto(_sender: UIButton){
+        self.changeActionButtonsState(isEnable: true)
+        
+    }
+    
+    ////#######/////////
+    
+    
+    //MARK : UITextfield delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+    }
 
 }

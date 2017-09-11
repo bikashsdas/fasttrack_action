@@ -14,6 +14,7 @@
 		0688931A1F63080A00E7117E /* TrackOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068893191F63080A00E7117E /* TrackOrdersTableViewCell.swift */; };
 		0688931D1F63319E00E7117E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688931C1F63319E00E7117E /* QuartzCore.framework */; };
 		0688931F1F633CB400E7117E /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0688931E1F633CB400E7117E /* OrderHistoryTableViewCell.swift */; };
+		06921AB81F66974600AE0F66 /* footerBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 06921AB71F66974600AE0F66 /* footerBar.png */; };
 		ED8B39891F62D8E400351699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B39881F62D8E400351699 /* AppDelegate.swift */; };
 		ED8B398E1F62D8E400351699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8B398C1F62D8E400351699 /* Main.storyboard */; };
 		ED8B39911F62D8E400351699 /* FastTrackSales.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED8B398F1F62D8E400351699 /* FastTrackSales.xcdatamodeld */; };
@@ -93,6 +94,7 @@
 		068893191F63080A00E7117E /* TrackOrdersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackOrdersTableViewCell.swift; sourceTree = "<group>"; };
 		0688931C1F63319E00E7117E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0688931E1F633CB400E7117E /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		06921AB71F66974600AE0F66 /* footerBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footerBar.png; sourceTree = "<group>"; };
 		ED8B39851F62D8E400351699 /* FastTrackSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastTrackSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8B39881F62D8E400351699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8B398D1F62D8E400351699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		ED8B39AD1F62D95C00351699 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				06921AB71F66974600AE0F66 /* footerBar.png */,
 				ED8B3A081F62D9F600351699 /* backArrowWhite.png */,
 				ED8B39AE1F62D9D200351699 /* arrowDown.png */,
 				06607F171F63DC6100E95E0A /* cross_cart.png */,
@@ -429,6 +432,7 @@
 				ED8B39E51F62D9D200351699 /* history_MarlboroFuse.png in Resources */,
 				ED8B39FC1F62D9D200351699 /* promoInactive.png in Resources */,
 				ED8B39E61F62D9D200351699 /* L&M_RegularCut_Blue.png in Resources */,
+				06921AB81F66974600AE0F66 /* footerBar.png in Resources */,
 				ED8B3A031F62D9D200351699 /* trackorderActive.png in Resources */,
 				ED8B39F11F62D9D200351699 /* numbercircleInactive.png in Resources */,
 				ED8B3A041F62D9D200351699 /* trackorderInactive.png in Resources */,
