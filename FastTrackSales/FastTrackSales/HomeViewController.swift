@@ -160,7 +160,6 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         btnOrderNow?.layer.cornerRadius = 5
         btnOrderNow?.layer.masksToBounds = true
         
-        //var grandTotalValueCart:Int = 0
         //////
         
         //Track order
@@ -489,9 +488,15 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         if isEnable {
             btnSave?.isEnabled = true
             btnCancel?.isEnabled = true
+            
+            btnSave?.alpha = 1.0
+            btnCancel?.alpha = 1.0
         }else{
             btnSave?.isEnabled = false
             btnCancel?.isEnabled = false
+            
+            btnSave?.alpha = 0.65
+            btnCancel?.alpha = 0.65
         }
     }
     
