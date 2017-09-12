@@ -70,6 +70,8 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     @IBOutlet var lblTotalValueText: UILabel?
     @IBOutlet var btnCancelCart: UIButton?
     @IBOutlet var btnOrderNow: UIButton?
+    
+    var grandTotalValueCart:Double = 0.0
     ////
     
     //Track order
@@ -92,12 +94,23 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     var productImages = ["L&M_RegularCut_Red.png", "L&M_RegularCut_Blue.png", "MarlboroFuse.png", "MarlboroBright.png", "MarlboroFine.png", "MarlboroFuse.png"]
     
     var productImagesPromotions = ["promo_MarlboroClove.png", "promo_MarlboroIce.png", "promo_MarlboroMenthol.png"]
+    
     var productImagesCart = ["history_LMRed.png","history_LMBlue.png"]
+    var productNameCart = ["L&M REGULAR CUT RED 100 BOX 19 201508","L&M REGULAR CUT BLUE 100 BOX 19 201509"]
+    var productQtyCart = ["5","10"]
+    
+    
     var productImagesOrderHistory = ["history_LMBlue.png", "history_LMRed.png", "history_MarlboroFuse.png"]
+    var productOrderIDOrderHistory = ["PMIORDGHYF098756", "PMIORDGHYF098757", "PMIORDGHYF098758"]
+    var productOrderQtyOrderHistory = ["5", "10", "8"]
+    var productOrderDateOrderHistory = ["Mon 24th Jul, 2017", "Wed 24th Jun, 2017", "Fri 24th Apr, 2017"]
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
         
@@ -146,6 +159,8 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         btnCancelCart?.layer.masksToBounds = true
         btnOrderNow?.layer.cornerRadius = 5
         btnOrderNow?.layer.masksToBounds = true
+        
+        //var grandTotalValueCart:Int = 0
         //////
         
         //Track order
@@ -290,6 +305,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     @IBAction func btnCartPressed(_sender: UIButton){
         lblHeaderTitle?.text = "Cart"
         isHomeScreen = false
+        
         /*
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let cartObj = storyBoard.instantiateViewController(withIdentifier: "CartSBID") as! CartViewController
@@ -303,6 +319,10 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         self.clearSubviewsForViewWithTag(viewTag: 4)
         self.refreshHomeController()
         tblVwCart?.reloadData()
+        
+        self.lblTotalValueText?.text = String(format: "%.2f$",self.grandTotalValueCart)
+        
+        self.grandTotalValueCart = 0.0
     }
     
     @IBAction func btnTrackOrdersPressed(_sender: UIButton){
@@ -422,6 +442,19 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
             cell.btnCancelOrDelete?.layer.cornerRadius = 5
             cell.btnCancelOrDelete?.layer.masksToBounds = true
             cell.imgVwProductOrder?.image = UIImage(named: productImagesCart[indexPath.row])
+            cell.lblProductNameText?.text = productNameCart[indexPath.row]
+            cell.txtFieldQuantity?.text = productQtyCart[indexPath.row];
+            
+            let qtyVal:Int = Int((cell.txtFieldQuantity?.text)!)!
+            
+            let totalVal:Double = Double(qtyVal*7)
+            
+            
+            cell.lblTotalAmountText?.text = String (format:"%.2f$",totalVal)
+            
+            self.grandTotalValueCart =  self.grandTotalValueCart + totalVal
+            
+            
             return cell
         }
         
@@ -433,6 +466,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
             cell.btnCancelOrder?.layer.masksToBounds = true
             cell.btnViewOrderDetails?.layer.cornerRadius = 5
             cell.btnViewOrderDetails?.layer.masksToBounds = true
+            return cell
         }
         else if tableView == tblVwOrderHistory{
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrderHistoryCellID", for: indexPath) as! OrderHistoryTableViewCell
@@ -441,6 +475,10 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
             cell.btnVwDetailsText?.layer.cornerRadius = 5
             cell.btnVwDetailsText?.layer.masksToBounds = true
             cell.imgVwProduct?.image = UIImage(named: productImagesOrderHistory[indexPath.row])
+            cell.lblOrderIdText?.text = productOrderIDOrderHistory[indexPath.row]
+            cell.lblQuantityText?.text = productOrderQtyOrderHistory[indexPath.row]
+            cell.lblDeliveryDateText?.text = productOrderDateOrderHistory[indexPath.row]
+            return cell
         }
    
         return cell

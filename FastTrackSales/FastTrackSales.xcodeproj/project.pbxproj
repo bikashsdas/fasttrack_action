@@ -74,6 +74,10 @@
 		ED8B3A151F62DAE600351699 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A0E1F62DAE600351699 /* OrderHistoryViewController.swift */; };
 		ED8B3A161F62DAE600351699 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A0F1F62DAE600351699 /* PromotionsViewController.swift */; };
 		ED8B3A171F62DAE600351699 /* TrackOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3A101F62DAE600351699 /* TrackOrdersViewController.swift */; };
+		EDA59A5F1F66B3EB002BCC6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA59A5E1F66B3EB002BCC6A /* CoreData.framework */; };
+		EDA59A611F66B3F6002BCC6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA59A601F66B3F6002BCC6A /* UIKit.framework */; };
+		EDA59A641F66B401002BCC6A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA59A621F66B401002BCC6A /* CoreFoundation.framework */; };
+		EDA59A651F66B401002BCC6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA59A631F66B401002BCC6A /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +162,10 @@
 		ED8B3A0E1F62DAE600351699 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		ED8B3A0F1F62DAE600351699 /* PromotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		ED8B3A101F62DAE600351699 /* TrackOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackOrdersViewController.swift; sourceTree = "<group>"; };
+		EDA59A5E1F66B3EB002BCC6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EDA59A601F66B3F6002BCC6A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EDA59A621F66B401002BCC6A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		EDA59A631F66B401002BCC6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA59A641F66B401002BCC6A /* CoreFoundation.framework in Frameworks */,
+				EDA59A651F66B401002BCC6A /* Foundation.framework in Frameworks */,
+				EDA59A611F66B3F6002BCC6A /* UIKit.framework in Frameworks */,
+				EDA59A5F1F66B3EB002BCC6A /* CoreData.framework in Frameworks */,
 				0688931D1F63319E00E7117E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +206,10 @@
 		0688931B1F63319E00E7117E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDA59A621F66B401002BCC6A /* CoreFoundation.framework */,
+				EDA59A631F66B401002BCC6A /* Foundation.framework */,
+				EDA59A601F66B3F6002BCC6A /* UIKit.framework */,
+				EDA59A5E1F66B3EB002BCC6A /* CoreData.framework */,
 				0688931C1F63319E00E7117E /* QuartzCore.framework */,
 			);
 			name = Frameworks;
@@ -221,6 +237,7 @@
 		ED8B39871F62D8E400351699 /* FastTrackSales */ = {
 			isa = PBXGroup;
 			children = (
+				EDA59A591F66B1A3002BCC6A /* CoreDataClasses */,
 				068893181F6307EE00E7117E /* Custom Cell */,
 				ED8B39AD1F62D95C00351699 /* Images */,
 				ED8B39AC1F62D94E00351699 /* Resources */,
@@ -320,6 +337,13 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		EDA59A591F66B1A3002BCC6A /* CoreDataClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CoreDataClasses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,7 +395,7 @@
 					ED8B39841F62D8E400351699 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 9DDPTP86JE;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					ED8B399B1F62D8E400351699 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -628,14 +652,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9DDPTP86JE;
 				INFOPLIST_FILE = FastTrackSales/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pmico.FastTrackSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "4e4d667c-007e-4259-b9c2-b4d416bc57a3";
+				PROVISIONING_PROFILE_SPECIFIER = "iSMS@iOSDevelopment";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -645,14 +669,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9DDPTP86JE;
 				INFOPLIST_FILE = FastTrackSales/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pmico.FastTrackSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "4e4d667c-007e-4259-b9c2-b4d416bc57a3";
+				PROVISIONING_PROFILE_SPECIFIER = "iSMS@iOSDevelopment";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
