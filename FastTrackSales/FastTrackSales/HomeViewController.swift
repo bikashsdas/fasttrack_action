@@ -68,10 +68,13 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     @IBOutlet var tblVwCart: UITableView?
     @IBOutlet var lblTotalSubText: UILabel?
     @IBOutlet var lblTotalValueText: UILabel?
+    @IBOutlet var lblVatAmountValue: UILabel?
     @IBOutlet var btnCancelCart: UIButton?
     @IBOutlet var btnOrderNow: UIButton?
     
     var grandTotalValueCart:Double = 0.0
+    let vatAmount:Double = 10.0
+    
     ////
     
     //Track order
@@ -110,7 +113,6 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
 
         // Do any additional setup after loading the view.
         
@@ -148,8 +150,8 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         /////
         
         ///Cart
-        tblVwCart?.delegate = self;
-        tblVwCart?.dataSource = self;
+        tblVwCart?.delegate = self
+        tblVwCart?.dataSource = self
         self.tblVwCart?.separatorStyle = UITableViewCellSeparatorStyle.none
         btnCancelCart?.layer.cornerRadius = 5
         btnCancelCart?.layer.masksToBounds = true
@@ -169,6 +171,21 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         tblVwOrderHistory?.dataSource = self;
         self.tblVwOrderHistory?.separatorStyle = UITableViewCellSeparatorStyle.none
         ///////
+        
+        self.view.addSubview(profileView!)
+        profileView?.isHidden = true
+        
+        self.view.addSubview(cartView!)
+        cartView?.isHidden = true
+        
+        self.view.addSubview(promotiondView!)
+        promotiondView?.isHidden = true
+        
+        self.view.addSubview(trackOrderView!)
+        trackOrderView?.isHidden = true
+        
+        self.view.addSubview(orderHistoryView!)
+        orderHistoryView?.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -206,18 +223,10 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         
         lblHeaderTitle?.text = "Profile Settings"
         isHomeScreen = false
-        //btnBack?.isHidden = false
-        //btnLogout?.frame = CGRect(x:btnLogoutPosActual.x,y:btnLogoutPosActual.y,width:btnSize.width,height:btnSize.height)
-        
-        /*
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let customerProfileObj = storyBoard.instantiateViewController(withIdentifier: "CustomerProfileSBID") as! CustomerProfileViewController
-        customerProfileObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(customerProfileObj.view)*/
         
         profileView?.frame = CGRect(x:10, y:94, width:1004, height:536)
-        //profileView?.isHidden = false
-        self.view.addSubview(profileView!)
+        //self.view.addSubview(profileView!)
+        profileView?.isHidden = false
         
         self.clearSubviewsForViewWithTag(viewTag: 2)
         self.refreshHomeController()
@@ -245,27 +254,32 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         for viewRef:UIView in self.view.subviews{
             
             if viewRef.tag == 2{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 5{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 6{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 3{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 4{
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
                 isHomeScreen = true
                 self.refreshHomeController()
             }
@@ -278,15 +292,10 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     @IBAction func btnPromotionsPressed(_sender: UIButton){
         lblHeaderTitle?.text = "Promotions"
         isHomeScreen = false
-        /*
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let promotionsObj = storyBoard.instantiateViewController(withIdentifier: "PromotionsSBID") as! PromotionsViewController
-        promotionsObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(promotionsObj.view)
-        self.clearSubviewsForViewWithTag(viewTag: 3)*/
         
         promotiondView?.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(promotiondView!)
+        //self.view.addSubview(promotiondView!)
+        promotiondView?.isHidden = false
         
         self.clearSubviewsForViewWithTag(viewTag: 3)
         self.refreshHomeController()
@@ -297,21 +306,23 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         lblHeaderTitle?.text = "Cart"
         isHomeScreen = false
         
-        /*
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let cartObj = storyBoard.instantiateViewController(withIdentifier: "CartSBID") as! CartViewController
-        cartObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(cartObj.view)
-        self.clearSubviewsForViewWithTag(viewTag: 4)*/
-        
         cartView?.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(cartView!)
+        //self.view.addSubview(cartView!)
+        cartView?.isHidden = false
         
         self.clearSubviewsForViewWithTag(viewTag: 4)
         self.refreshHomeController()
         tblVwCart?.reloadData()
         
-        self.lblTotalValueText?.text = String(format: "%.2f$",self.grandTotalValueCart)
+        
+        self.lblVatAmountValue?.text = String(format: "10.00$")
+        
+        let grandTotalWithVat:Double = self.grandTotalValueCart + self.vatAmount
+        
+        
+        //self.lblTotalValueText?.text = String(format: "%.2f$",self.grandTotalValueCart)
+        
+        self.lblTotalValueText?.text = String(format: "%.2f$",grandTotalWithVat)
         
         self.grandTotalValueCart = 0.0
     }
@@ -320,15 +331,9 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         lblHeaderTitle?.text = "Track Orders"
         isHomeScreen = false
         
-        /*
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let trackOrdersObj = storyBoard.instantiateViewController(withIdentifier: "TrackOrdersSBID") as! TrackOrdersViewController
-        trackOrdersObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(trackOrdersObj.view)
-        self.clearSubviewsForViewWithTag(viewTag: 5)*/
-        
         trackOrderView?.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(trackOrderView!)
+        //self.view.addSubview(trackOrderView!)
+        trackOrderView?.isHidden = false
         
         self.clearSubviewsForViewWithTag(viewTag: 5)
         self.refreshHomeController()
@@ -338,15 +343,10 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     @IBAction func btnOrderHistoryPressed(_sender: UIButton){
         lblHeaderTitle?.text = "Order History"
         isHomeScreen = false
-        /*
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let orderHistoryObj = storyBoard.instantiateViewController(withIdentifier: "OrderHistorySBID") as! OrderHistoryViewController
-        orderHistoryObj.view.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(orderHistoryObj.view)
-        self.clearSubviewsForViewWithTag(viewTag: 6)*/
         
         orderHistoryView?.frame = CGRect(x:10, y:94, width:1024, height:536)
-        self.view.addSubview(orderHistoryView!)
+        //self.view.addSubview(orderHistoryView!)
+        orderHistoryView?.isHidden = false
         
         self.clearSubviewsForViewWithTag(viewTag: 6)
         self.refreshHomeController()
@@ -382,7 +382,8 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         
         for viewRef:UIView in self.view.subviews{
             if ((viewRef.tag != 1) && (viewRef.tag != 0)) && (viewRef.tag != viewTag) {
-                viewRef.removeFromSuperview()
+                //viewRef.removeFromSuperview()
+                viewRef.isHidden = true
             }
         }
     }
@@ -437,7 +438,6 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
             let qtyVal:Int = Int((cell.txtFieldQuantity?.text)!)!
             
             let totalVal:Double = Double(qtyVal*7)
-            
             
             cell.lblTotalAmountText?.text = String (format:"%.2f$",totalVal)
             

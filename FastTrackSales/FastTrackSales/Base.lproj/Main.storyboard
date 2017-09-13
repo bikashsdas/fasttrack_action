@@ -408,6 +408,7 @@ Box  19 201508</string>
                         <outlet property="lblPromotionTitleText" destination="rZO-Ye-eG2" id="7Nf-ka-1KJ"/>
                         <outlet property="lblTotalSubText" destination="8iD-dd-dyz" id="7Pd-gI-ArQ"/>
                         <outlet property="lblTotalValueText" destination="Sff-rn-Y0G" id="MbN-Nj-bZT"/>
+                        <outlet property="lblVatAmountValue" destination="uc3-NO-C4t" id="V90-X5-Lzb"/>
                         <outlet property="orderHistoryView" destination="86D-tm-Mac" id="bY0-IA-Ym1"/>
                         <outlet property="profileView" destination="igb-F9-zZZ" id="K8y-KV-QTJ"/>
                         <outlet property="promotiondView" destination="sdf-fR-Ub3" id="e8z-TO-TTJ"/>
