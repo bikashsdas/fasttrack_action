@@ -25,7 +25,7 @@ import QuartzCore
  
  */
 
-class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate,UICollectionViewDataSource, UICollectionViewDelegate,UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate,UICollectionViewDataSource, UICollectionViewDelegate,UITableViewDataSource, UITableViewDelegate, ProductItemCollectionViewCellDelegate {
     
     @IBOutlet var btnBack: UIButton?
     @IBOutlet var btnLogout: UIButton?
@@ -118,14 +118,10 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profilePicTapped))
         ivCustomerProfilePic?.isUserInteractionEnabled = true
         ivCustomerProfilePic?.addGestureRecognizer(tapGestureRecognizer)
-        colVwProduct?.delegate = self;
-        colVwProduct?.dataSource = self;
         
-        profileView?.isHidden = true
-        promotiondView?.isHidden = true
-        cartView?.isHidden = true
-        trackOrderView?.isHidden = true
-        orderHistoryView?.isHidden = true
+        colVwProduct?.delegate = self
+        colVwProduct?.dataSource = self
+        
         
         //Profile setting
         tfName?.delegate = self
@@ -220,7 +216,8 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         self.view.addSubview(customerProfileObj.view)*/
         
         profileView?.frame = CGRect(x:10, y:94, width:1004, height:536)
-        profileView?.isHidden = false
+        //profileView?.isHidden = false
+        self.view.addSubview(profileView!)
         
         self.clearSubviewsForViewWithTag(viewTag: 2)
         self.refreshHomeController()
@@ -248,32 +245,27 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         for viewRef:UIView in self.view.subviews{
             
             if viewRef.tag == 2{
-                //viewRef.removeFromSuperview()
-                viewRef.isHidden = true
+                viewRef.removeFromSuperview()
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 5{
-                //viewRef.removeFromSuperview()
-                viewRef.isHidden = true
+                viewRef.removeFromSuperview()
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 6{
-                //viewRef.removeFromSuperview()
-                viewRef.isHidden = true
+                viewRef.removeFromSuperview()
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 3{
-                //viewRef.removeFromSuperview()
-                viewRef.isHidden = true
+                viewRef.removeFromSuperview()
                 isHomeScreen = true
                 self.refreshHomeController()
             }
             if viewRef.tag == 4{
-                //viewRef.removeFromSuperview()
-                viewRef.isHidden = true
+                viewRef.removeFromSuperview()
                 isHomeScreen = true
                 self.refreshHomeController()
             }
@@ -294,7 +286,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         self.clearSubviewsForViewWithTag(viewTag: 3)*/
         
         promotiondView?.frame = CGRect(x:10, y:94, width:1024, height:536)
-        promotiondView?.isHidden = false
+        self.view.addSubview(promotiondView!)
         
         self.clearSubviewsForViewWithTag(viewTag: 3)
         self.refreshHomeController()
@@ -313,7 +305,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         self.clearSubviewsForViewWithTag(viewTag: 4)*/
         
         cartView?.frame = CGRect(x:10, y:94, width:1024, height:536)
-        cartView?.isHidden = false
+        self.view.addSubview(cartView!)
         
         self.clearSubviewsForViewWithTag(viewTag: 4)
         self.refreshHomeController()
@@ -336,7 +328,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         self.clearSubviewsForViewWithTag(viewTag: 5)*/
         
         trackOrderView?.frame = CGRect(x:10, y:94, width:1024, height:536)
-        trackOrderView?.isHidden = false
+        self.view.addSubview(trackOrderView!)
         
         self.clearSubviewsForViewWithTag(viewTag: 5)
         self.refreshHomeController()
@@ -354,7 +346,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         self.clearSubviewsForViewWithTag(viewTag: 6)*/
         
         orderHistoryView?.frame = CGRect(x:10, y:94, width:1024, height:536)
-        orderHistoryView?.isHidden = false
+        self.view.addSubview(orderHistoryView!)
         
         self.clearSubviewsForViewWithTag(viewTag: 6)
         self.refreshHomeController()
@@ -390,9 +382,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         
         for viewRef:UIView in self.view.subviews{
             if ((viewRef.tag != 1) && (viewRef.tag != 0)) && (viewRef.tag != viewTag) {
-                //viewRef.removeFromSuperview()
-                viewRef.isHidden = true
-                
+                viewRef.removeFromSuperview()
             }
         }
     }
@@ -551,5 +541,13 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         textField.resignFirstResponder()
         return true
     }
+    
+    //MARK : ProductItemCollectionViewCellDelegate method
+    func addToCartSelected()  {  //(colViewCellObj: ProductItemCollectionViewCell) {
+        print("add to cart pressed")
+    }  
 
 }
+
+
+

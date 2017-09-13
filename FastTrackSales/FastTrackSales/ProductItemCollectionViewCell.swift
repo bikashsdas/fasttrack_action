@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol ProductItemCollectionViewCellDelegate:class{
+    
+    func addToCartSelected()        //(colViewCellObj: ProductItemCollectionViewCell)
+}
+
+
+
 class ProductItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var lblItemNameText: UILabel?
@@ -16,8 +23,10 @@ class ProductItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet var txtFeildReqQuantity: UITextField?
     @IBOutlet var btnAddToCart: UIButton?
     
+    weak var delegateObj:ProductItemCollectionViewCellDelegate?
+    //weak var delegate: ClassBVCDelegate?
     
-    @IBAction func btnAddToCartPressed(_sender: UIButton){
-        
+    @IBAction func btnAddToCartPressed(){
+        delegateObj?.addToCartSelected()       //(colViewCellObj: ProductItemCollectionViewCell())
     }
 }
