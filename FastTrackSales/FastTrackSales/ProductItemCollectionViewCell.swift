@@ -10,7 +10,7 @@ import UIKit
 
 protocol ProductItemCollectionViewCellDelegate:class{
     
-    func addToCartSelected()        //(colViewCellObj: ProductItemCollectionViewCell)
+    func addToCartSelected(objProductItemCollectionViewCell:ProductItemCollectionViewCell)
 }
 
 
@@ -23,10 +23,9 @@ class ProductItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet var txtFeildReqQuantity: UITextField?
     @IBOutlet var btnAddToCart: UIButton?
     
-    weak var delegateObj:ProductItemCollectionViewCellDelegate?
-    //weak var delegate: ClassBVCDelegate?
+    var delegateObj:ProductItemCollectionViewCellDelegate?
     
-    @IBAction func btnAddToCartPressed(){
-        delegateObj?.addToCartSelected()       //(colViewCellObj: ProductItemCollectionViewCell())
+    @IBAction func btnAddToCartPressed(sender: UIButton){
+        delegateObj?.addToCartSelected(objProductItemCollectionViewCell: self)
     }
 }

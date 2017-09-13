@@ -328,7 +328,7 @@ Box  19 201508</string>
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="btnAddToCartPressed" destination="PIP-2t-hed" eventType="touchUpInside" id="66w-jt-7n3"/>
+                                                                <action selector="btnAddToCartPressedWithSender:" destination="PIP-2t-hed" eventType="touchUpInside" id="Brc-Wl-HDq"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>

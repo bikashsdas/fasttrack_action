@@ -369,6 +369,8 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
         cell.lblAvailableQuantityText?.text = productsQuantuty[indexPath.item]
         cell.imgVwPoductItem?.image = UIImage(named: productImages[indexPath.item])
         
+        cell.delegateObj = self
+        
         return cell
     }
     
@@ -543,10 +545,13 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UITextViewDelegat
     }
     
     //MARK : ProductItemCollectionViewCellDelegate method
-    func addToCartSelected()  {  //(colViewCellObj: ProductItemCollectionViewCell) {
+    
+    func addToCartSelected(objProductItemCollectionViewCell: ProductItemCollectionViewCell) {
         print("add to cart pressed")
-    }  
-
+        objProductItemCollectionViewCell.txtFeildReqQuantity?.resignFirstResponder()
+    }
+    
+    
 }
 
 
