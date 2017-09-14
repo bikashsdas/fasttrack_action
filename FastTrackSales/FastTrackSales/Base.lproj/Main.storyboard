@@ -164,7 +164,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="footerBar.png" translatesAutoresizingMaskIntoConstraints="NO" id="jLd-nl-2v3">
-                                <rect key="frame" x="0.0" y="640" width="1024" height="128"/>
+                                <rect key="frame" x="0.0" y="659" width="1024" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="numbercircleInactive.png" translatesAutoresizingMaskIntoConstraints="NO" id="xJ7-rO-3Cy">
